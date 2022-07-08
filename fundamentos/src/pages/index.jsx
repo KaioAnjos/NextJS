@@ -1,5 +1,8 @@
 import Navegar from "../components/Navegar"
 export default function Inicio(){
+    function nova(){
+    window.open("/teclado", "_blank", "location=yes")
+}
     return (
         <div style={{
             display: 'flex',
@@ -11,6 +14,7 @@ export default function Inicio(){
            <Navegar texto="Estiloso" destino="/estiloso" cor="darkslategrey"/>
            <Navegar texto="Teste" destino="/teste" cor="seagreen"/>
            <Navegar texto="Jsx" destino="/jsx" cor="firebrick"/>
+           <input type="button" value="Nova" onClick={() => nova()} />
         </div>
     )
 }
