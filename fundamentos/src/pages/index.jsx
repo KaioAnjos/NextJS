@@ -14,6 +14,7 @@ export default function Inicio(){
            <Navegar texto="Estiloso" destino="/estiloso" cor="darkslategrey"/>
            <Navegar texto="Teste" destino="/teste" cor="seagreen"/>
            <Navegar texto="Jsx" destino="/jsx" cor="firebrick"/>
+           <Navegar texto= "Teste" destino="/teclado" cor="blue"/>
            <input type="button" value="Nova" onClick={() => nova()} />
         </div>
     )
