@@ -5,14 +5,16 @@ export default function Teclado_Press(){
     var y = String.fromCharCode(x);
     const w = document.querySelector("in");
     String.toString(document.getElementById("letra").innerText = "Número: " + x + " = Caractere: " + y);
+
     if(x == "112") {String.toString(document.getElementById("F1").innerText = "F1 precionado");} 
     if(x == "13"){
-        var g = "<input type='text' id='input' size='40'/>";
+        var g = "<input type='text' id='teste' size='40'/>";
         document.getElementById("input").innerHTML = g;
-        document.getElementById("input").focus();
+        document.getElementById("teste").focus();
     }
     else{
-        document.getElementById("input").innerText = "Aberte Enter"
+        var g = "<input type='text' id='teste' size='40' disabled/>"
+        document.getElementById("input").innerHTML = g;
     }
 }
     return(
@@ -20,7 +22,7 @@ export default function Teclado_Press(){
         <p>Tecla precionado</p>
         <input id="in" type="text" size="40" onKeyDown={() => dig(event)}/>
         <p id="letra"></p>
-        <div id="input"></div>
+        <p id="input"></p>
         <p id="F1"></p>
         </div>
     );
