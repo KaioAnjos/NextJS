@@ -9,6 +9,7 @@ export default function Teclado_Press(){
     if(x == "13"){
         var g = "<input type='text' id='input' size='40'/>";
         document.getElementById("input").innerHTML = g;
+        document.getElementById("input").focus();
     }
     else{
         document.getElementById("input").innerText = "Aberte Enter"
