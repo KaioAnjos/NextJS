@@ -21,13 +21,19 @@ export default function Teclado_Press() {
         }
         if (x == "88") {
             var captu = "";
-            function cap() {
                 var c = captu = parseInt(document.getElementById('inp').value);
                 document.getElementById("in").focus();
                 setTimeout(() => { document.getElementById("in").value = "" }, 100);
                 return c;
+        }
+        if(document.getElementById("in").focus() == focus()){
+            var c = parseInt(document.getElementById("in").value);
+            if(c.length = 8){
+                c = c.substring(0, 8)
             }
-            alert(cap())
+            else{
+                alert("codigo de barra errado");
+            }
         }
     }
     setTimeout(() => { document.getElementById("in").focus(); }, 500);
