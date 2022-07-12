@@ -5,7 +5,7 @@ export default function Teclado(){
     return(
         <Layout titulo="Teclado_Press">
         <div>
-            <TecladoPress focusSet/>
+            <TecladoPress/>
         </div>
         </Layout>
     );

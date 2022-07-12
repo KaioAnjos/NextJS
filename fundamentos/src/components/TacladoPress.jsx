@@ -1,14 +1,7 @@
 import React from "react";
 export default function Teclado_Press(){
-    const focuSet = (props) => {
-        const v = React.useState(0);
-        React.useEffect(() =>{
-            window.onload = function(){
-                document.getElementById("in").focus();
-            }
-        })
-        return window.onload;
-    }
+
+    
     function dig(event){
     var x = event.keyCode;
     var y = String.fromCharCode(x);
@@ -24,7 +17,7 @@ export default function Teclado_Press(){
         document.getElementById("input").innerHTML = g;
     }
 }
-focuSet();
+       setTimeout(() => {document.getElementById("in").focus();}, 500); 
         return(
        <div>
         <p>Tecla precionado</p>

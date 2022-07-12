@@ -1,7 +1,7 @@
 import Navegar from "../components/Navegar"
 export default function Inicio(){
     function nova(){
-    window.open("/teclado", "_blank", "location=yes")
+    window.open("/teclado", "_blank", "location=no")
 }
     return (
         <div style={{
