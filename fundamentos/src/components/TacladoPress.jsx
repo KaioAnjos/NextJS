@@ -29,35 +29,23 @@ export default function Teclado_Press() {
             return c;
         }
         //adicionar dados do input para a tabela
-        function criartabela(conteudo) {
-            var tbltabela = document.createElement("table");
-            var tblthead = document.createElement("thead");
-            var tblBody = document.createElement("tbody");
-            var tbltd = function (i) { return (i == 0) ? "th":"td"; };
-            for (var b = 0; b < conteudo.length; b++) {
-                var tblTr = document.createElement("tr");
-                for (var o = 1; o < conteudo[b].length; o++) {
-                    var tblT = document.createElement(tbltd(b));
-                    var tblTexto = document.createTextNode(conteudo[b][o]);
-                    tblT.appendChild(tblTexto);
-                    tblTr.appendChild(tblT);
-                }
-                (b = 0) ? tblthead.appendChild(tblTr) :tblBody.appendChild(tblTr);
-            }
-            tbltabela.appendChild(tblthead);
-            tbltabela.appendChild(tblBody);
-            return tbltabela;
+        function criartabela(conteudo, idTable, qtnConteudo, valorConteudo) {
+            var newRow = document.createElement("tr");
+            newRow.insertCell(0).innerHTML = conteudo;
+            newRow.insertCell(1).innerHTML = qtnConteudo;
+            var colunaValor = newRow.insertCell(2);
+            colunaValor.innerHTML = valorConteudo;
+            document.getElementById(idTable).appendChild(newRow);
+            return false;
         }
 
         //verificando se o foco está ativa no input do codigo de barra para adicionar
         if (document.hasFocus()) {
-            var c = document.getElementById("in").value;
-            if ((c.length >= 8)) {
-                for (var n = 0; n < 10; n++) {
-                    document.getElementById("tabela").hasChildNodes(criartabela([
-                        [n++, c]
-                    ]))
-                }
+            var c = document.getElementById("in");
+            var v = document.getElementById("inp");
+            if ((c.value.length == 7||x == "13")) {
+                criartabela(c.value, "tbl", v.value||1, " 999R$ ")
+                c.value = null;
             }
         }
     }
@@ -70,8 +58,22 @@ export default function Teclado_Press() {
             <p id="letra"></p>
             <p id="input"></p>
             <p id="F1"></p>
-            <div id="tbl" color="red">
-
+            <div color="red">
+                <table>
+                    <tbody id="tbl">
+                        <tr>
+                            <th>
+                                Produto
+                            </th>
+                            <th>
+                                Quantidade
+                            </th>
+                            <th>
+                                Valor
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     )
