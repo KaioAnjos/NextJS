@@ -17,16 +17,13 @@ export default function Teclado_Press() {
         //Apertando a tecla c
         if (x == "67") {
             document.getElementById("inp").focus();
-            document.getElementById("in").value = "";
-            setTimeout(() => { document.getElementById("inp").value = "" }, 100);
+            document.getElementById("in").value = null;
+            setTimeout(() => { document.getElementById("inp").value = null}, 100);
         }
         //apertando a tecla X
         if (x == "88") {
-            var captu = "";
-            var c = captu = parseInt(document.getElementById('inp').value);
             document.getElementById("in").focus();
             setTimeout(() => { document.getElementById("in").value = "" }, 100);
-            return c;
         }
         //adicionar dados do input para a tabela
         function criartabela(conteudo, idTable, qtnConteudo, valorConteudo) {
@@ -39,17 +36,26 @@ export default function Teclado_Press() {
             return false;
         }
 
-        //verificando se o foco está ativa no input do codigo de barra para adicionar
+        //verificando se o foco está ativa no input do codigo de barra para adicionar e inserir dados na tabela
         if (document.hasFocus()) {
             var c = document.getElementById("in");
             var v = document.getElementById("inp");
-            if ((c.value.length == 7||x == "13")) {
-                criartabela(c.value, "tbl", v.value||1, " 999R$ ")
+            if ((c.value.length >= 8||x == "13")) {
+                criartabela(c.value, "tbl", v.value||1, 1)
                 c.value = null;
             }
         }
     }
+    
+    setTimeout(() => {window.addEventListener('keypress', (event) => {
+        var pressKey = event.keyCode;
+        if (pressKey == "13"){
+            document.getElementById("in").focus();
+        }
+    }, false)}, 500)
     setTimeout(() => { document.getElementById("in").focus(); }, 500);
+
+        prompt("Olá");
     return (
         <div>
             <p>Tecla precionado</p>
