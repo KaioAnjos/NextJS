@@ -18,7 +18,7 @@ export default function Teclado_Press() {
         if (x == "67") {
             document.getElementById("inp").focus();
             document.getElementById("in").value = null;
-            setTimeout(() => { document.getElementById("inp").value = null}, 100);
+            setTimeout(() => { document.getElementById("inp").value = null }, 100);
         }
         //apertando a tecla X
         if (x == "88") {
@@ -35,27 +35,33 @@ export default function Teclado_Press() {
             document.getElementById(idTable).appendChild(newRow);
             return false;
         }
-
+        
         //verificando se o foco está ativa no input do codigo de barra para adicionar e inserir dados na tabela
         if (document.hasFocus()) {
             var c = document.getElementById("in");
             var v = document.getElementById("inp");
-            if ((c.value.length >= 8||x == "13")) {
-                criartabela(c.value, "tbl", v.value||1, 1)
+            if ((c.value.length >= 8 || x == "13")) {
+                criartabela(c.value, "tbl", v.value || 1, 1)
                 c.value = null;
             }
         }
-    }
-    
-    setTimeout(() => {window.addEventListener('keypress', (event) => {
-        var pressKey = event.keyCode;
-        if (pressKey == "13"){
-            document.getElementById("in").focus();
-        }
-    }, false)}, 500)
-    setTimeout(() => { document.getElementById("in").focus(); }, 500);
 
-        prompt("Olá");
+        //Cancelar Cupom apertando r
+        if (x == "82") {
+            var cupomCanc = prompt("codigo do cupom");
+        }
+
+    }
+
+    setTimeout(() => {
+        window.addEventListener('keypress', (event) => {
+            var pressKey = event.keyCode;
+            if (pressKey == "13") {
+                document.getElementById("in").focus();
+            }
+        }, false)
+    }, 500)
+    setTimeout(() => { document.getElementById("in").focus(); }, 500);
     return (
         <div>
             <p>Tecla precionado</p>
