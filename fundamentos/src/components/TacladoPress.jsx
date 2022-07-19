@@ -50,17 +50,21 @@ export default function Teclado_Press() {
         if (x == "82") {
             var cupomCanc = prompt("codigo do cupom");
             var trSelection = document.getElementById("tbl");
-            var linhas = trSelection.getElementsByTagName("tr");
-            const rows = Array.from(document.getElementsByTagName("tr"));
-            rows.forEach(rowItem => {
-                if (rowItem.innerHTML === cupomCanc) {
-                    rowItem.remover();
+            deleterow(trSelection, cupomCanc)
+            function deleterow(tableItem, currentRow) {
+                try {
+                    const linhas = Array.from(document.getElementsByTagName(tableItem))
+                    linhas.forEach(rowItem =>{
+                        if(rowItem.innerHTML = currentRow){
+                            rowItem.parentNode.remove();
+                        }
+                    })
+                } catch (error) {
+                    alert(error);
                 }
-            })
+            }
         }
-
     }
-
     setTimeout(() => {
         window.addEventListener('keypress', (event) => {
             var pressKey = event.keyCode;
