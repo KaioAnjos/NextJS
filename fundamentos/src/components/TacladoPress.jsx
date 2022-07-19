@@ -27,7 +27,7 @@ export default function Teclado_Press() {
         }
         //adicionar dados do input para a tabela
         function criartabela(conteudo, idTable, qtnConteudo, valorConteudo) {
-            var newRow = document.createElement("tr");
+            var newRow = document.createElement('tr');
             newRow.insertCell(0).innerHTML = conteudo;
             newRow.insertCell(1).innerHTML = qtnConteudo;
             var colunaValor = newRow.insertCell(2);
@@ -35,7 +35,7 @@ export default function Teclado_Press() {
             document.getElementById(idTable).appendChild(newRow);
             return false;
         }
-        
+
         //verificando se o foco está ativa no input do codigo de barra para adicionar e inserir dados na tabela
         if (document.hasFocus()) {
             var c = document.getElementById("in");
@@ -49,6 +49,14 @@ export default function Teclado_Press() {
         //Cancelar Cupom apertando r
         if (x == "82") {
             var cupomCanc = prompt("codigo do cupom");
+            var trSelection = document.getElementById("tbl");
+            var linhas = trSelection.getElementsByTagName("tr");
+            const rows = Array.from(document.getElementsByTagName("tr"));
+            rows.forEach(rowItem => {
+                if (rowItem.innerHTML === cupomCanc) {
+                    rowItem.remover();
+                }
+            })
         }
 
     }
