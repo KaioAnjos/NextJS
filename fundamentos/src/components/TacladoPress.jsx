@@ -40,11 +40,25 @@ export default function Teclado_Press() {
         if (document.hasFocus()) {
             var c = document.getElementById("in");
             var v = document.getElementById("inp");
+            var n = parseInt(v.value)||1;
+            var total = n * 1;
             if ((c.value.length >= 8 || x == "13")) {
-                criartabela(c.value, "tbl", v.value || 1, 1)
+                criartabela(c.value, "tbl", v.value || 1, total)
                 c.value = null;
+                v.value = null;
+                valTotal();
             }
         }
+        //Soma Total
+        function valTotal(){
+            var table = document.querySelectorAll("table tr td:last-child");
+            var sum = 0;
+            for(let i = 0; i < table.length; i++){
+                sum += isNaN(table[i].innerText) ? 0: parseInt(table[i].innerText)
+            }
+            document.getElementById('Total').innerText = sum
+        }
+
 
         //Cancelar Cupom apertando r
         if (x == "82") {
@@ -81,7 +95,7 @@ export default function Teclado_Press() {
             <p id="input"></p>
             <p id="F1"></p>
             <div color="red">
-                <table>
+                <table id="table">
                     <tbody id="tbl">
                         <tr>
                             <th>
@@ -96,7 +110,7 @@ export default function Teclado_Press() {
                         </tr>
                     </tbody>
                 </table>
-                <label id='valor Total'/>
+                <p id="Total"></p>
             </div>
         </div>
     )
