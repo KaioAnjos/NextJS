@@ -49,20 +49,18 @@ export default function Teclado_Press() {
         //Cancelar Cupom apertando r
         if (x == "82") {
             var cupomCanc = prompt("codigo do cupom");
-            var trSelection = document.getElementById("tbl");
-            deleterow(trSelection, cupomCanc)
-            function deleterow(tableItem, currentRow) {
-                try {
-                    const linhas = Array.from(document.getElementsByTagName(tableItem))
-                    linhas.forEach(rowItem =>{
-                        if(rowItem.innerHTML = currentRow){
-                            rowItem.parentNode.remove();
-                        }
-                    })
-                } catch (error) {
-                    alert(error);
+            Array.from(document.getElementsByTagName("tr")).forEach(function (row) {
+                var fistTD = row.getElementsByTagName("td")
+                if (fistTD.item(0) === null) { return; }
+                var Cod = fistTD.item(0).innerHTML;
+                if (cupomCanc.indexOf(Cod) >= 0) {
+                    var inputCol = row.getElementsByTagName('td').item(2);
+                    if (inputCol.value = Cod) {
+                        row.remove()
+                    }
                 }
-            }
+            })
+            setTimeout(() => { document.getElementById("in").value = "" }, false);
         }
     }
     setTimeout(() => {
@@ -98,6 +96,7 @@ export default function Teclado_Press() {
                         </tr>
                     </tbody>
                 </table>
+                <label id='valor Total'/>
             </div>
         </div>
     )
