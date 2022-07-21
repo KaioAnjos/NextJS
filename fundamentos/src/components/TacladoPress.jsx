@@ -4,16 +4,6 @@ export default function Teclado_Press() {
         var x = event.keyCode;
         var y = String.fromCharCode(x);
         String.toString(document.getElementById("letra").innerText = "Número: " + x + " = Caractere: " + y);
-        if (x == "112") { String.toString(document.getElementById("F1").innerText = "F1 precionado"); }
-        //apertando a tecla enter
-        if (x == "13") {
-            var g = "<input type='text' id='teste' size='40'/>";
-            document.getElementById("input").innerHTML = g;
-        }
-        else {
-            var g = "<input type='text' id='teste' size='40' disabled/>"
-            document.getElementById("input").innerHTML = g;
-        }
         //Apertando a tecla c
         if (x == "67") {
             document.getElementById("inp").focus();
@@ -58,6 +48,14 @@ export default function Teclado_Press() {
             }
             document.getElementById('Total').innerText = sum
         }
+        if (x == "85") {
+            var subtotal = isNaN(document.getElementById("Total").value);
+            var valorRec = parseInt(prompt("Valor Recebido"))
+            var totalsub = subtotal - valorRec
+            document.getElementById('ValorRec').innerText = valorRec;
+            document.getElementById('ValorRest').innerText = totalsub;
+            setTimeout(() => { document.getElementById("in").value = "" }, false);
+        }
 
 
         //Cancelar Cupom apertando r
@@ -92,8 +90,6 @@ export default function Teclado_Press() {
             <input id="inp" type="text" size="1" onKeyDown={() => dig(event)} />
             <input id='in' type="text" size="40" onKeyDown={() => dig(event)} maxLength='8' />
             <p id="letra"></p>
-            <p id="input"></p>
-            <p id="F1"></p>
             <div color="red">
                 <table id="table">
                     <tbody id="tbl">
@@ -110,7 +106,11 @@ export default function Teclado_Press() {
                         </tr>
                     </tbody>
                 </table>
-                <p id="Total"></p>
+                Total:&nbsp;<label id="Total"/>&nbsp;|
+                Valor Recibido:&nbsp;
+                <label id="ValorRec"/>&nbsp;|
+                Valor Restante:&nbsp;
+                <label id="ValorRest"/>&nbsp;|
             </div>
         </div>
     )
