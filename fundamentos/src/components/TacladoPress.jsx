@@ -48,13 +48,18 @@ export default function Teclado_Press() {
             }
             document.getElementById('Total').innerText = sum
         }
-        if (x == "85") {
-            var subtotal = isNaN(document.getElementById("Total").value);
+        //subtotal
+        const subTotal = function totalSub() {
+            var subtotal = isNaN(document.querySelector("#Total").innerText) ? 0: parseInt(document.querySelector("#Total").innerText);
             var valorRec = parseInt(prompt("Valor Recebido"))
-            var totalsub = subtotal - valorRec
+            subtotal = subtotal - valorRec;
+            subtotal.toFixed(2);
             document.getElementById('ValorRec').innerText = valorRec;
-            document.getElementById('ValorRest').innerText = totalsub;
+            document.getElementById('ValorRest').innerText = subtotal;
             setTimeout(() => { document.getElementById("in").value = "" }, false);
+        }
+        if (x == "85") {
+           subTotal();
         }
 
 
