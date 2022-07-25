@@ -49,17 +49,17 @@ export default function Teclado_Press() {
             document.getElementById('Total').innerText = sum
         }
         //subtotal
-        const subTotal = function totalSub() {
+
+
+        if (x == "85") {
             var subtotal = isNaN(document.querySelector("#Total").innerText) ? 0: parseInt(document.querySelector("#Total").innerText);
             var valorRec = parseInt(prompt("Valor Recebido"))
-            subtotal = subtotal - valorRec;
-            subtotal.toFixed(2);
+            let subT = subtotal - valorRec;
+            subT.toFixed(2)
             document.getElementById('ValorRec').innerText = valorRec;
-            document.getElementById('ValorRest').innerText = subtotal;
+            document.getElementById('ValorRest').innerText = subT;
             setTimeout(() => { document.getElementById("in").value = "" }, false);
-        }
-        if (x == "85") {
-           subTotal();
+            return subT;
         }
 
 
