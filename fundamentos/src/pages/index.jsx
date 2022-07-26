@@ -16,6 +16,7 @@ export default function Inicio(){
            <Navegar texto="Jsx" destino="/jsx" cor="firebrick"/>
            <Navegar texto= "Teste" destino="/teclado" cor="blue"/>
            <input type="button" value="Nova" onClick={() => nova()} />
+           <Navegar texto="Login Teste" destino="/LoginTeste" cor="Red"/>
         </div>
     )
 }
