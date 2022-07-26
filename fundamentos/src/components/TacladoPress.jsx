@@ -48,18 +48,16 @@ export default function Teclado_Press() {
             }
             document.getElementById('Total').innerText = sum
         }
-        //subtotal
-
-
+        //subtotal abertando a tecla u
         if (x == "85") {
             var subtotal = isNaN(document.querySelector("#Total").innerText) ? 0: parseInt(document.querySelector("#Total").innerText);
             var valorRec = parseInt(prompt("Valor Recebido"))
-            let subT = subtotal - valorRec;
-            subT.toFixed(2)
+            subtotal = subtotal - valorRec;
+            subtotal.toFixed()
             document.getElementById('ValorRec').innerText = valorRec;
-            document.getElementById('ValorRest').innerText = subT;
+            document.getElementById('ValorRest').innerText = subtotal;
             setTimeout(() => { document.getElementById("in").value = "" }, false);
-            return subT;
+            return subtotal;
         }
 
 
@@ -87,7 +85,7 @@ export default function Teclado_Press() {
                 document.getElementById("in").focus();
             }
         }, false)
-    }, 500)
+    }, false)
     setTimeout(() => { document.getElementById("in").focus(); }, 500);
     return (
         <div>
