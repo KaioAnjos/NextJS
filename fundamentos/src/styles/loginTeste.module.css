@@ -133,7 +133,7 @@
     width: 100%;
 }
 
-.has_val + .focus_input::after{
+.has_val+.focus_input::after {
     top: -15px;
 }
 
