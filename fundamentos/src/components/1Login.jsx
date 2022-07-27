@@ -23,11 +23,11 @@ export default function Login() {
                         </div>
                         <ul className={style.login_utils}>
                             <li className={style.login_list}>
-                                <span className={style.text1}>Esqueceu a</span>
+                                <span className={style.text1}>Esqueceu a </span>
                                 <a href="" className={style.text2}>senha?</a>
                             </li>
                             <li className={style.login_list}>
-                                <span className={style.text1}>Não tem conta?</span>
+                                <span className={style.text1}>Não tem conta? </span>
                                 <a href="" className={style.text2}>Criar</a>
                             </li>
                         </ul>
