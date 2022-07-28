@@ -39,3 +39,7 @@ npx tailwindcss init -p
 
 Adicionar o importa na pasta _app.js
 import 'tailwindcss/tailwind.css'
+
+adição de cores  
+mode: 'jit',  // update this line
+  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
