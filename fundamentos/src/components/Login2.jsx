@@ -9,7 +9,7 @@ export default function Login2() {
         </div>
       </div>
       <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-        <div className="mx-auto w-full max-w-sm">
+        <div className="mx-auto w-full max-w-sm lg:w-96">
           <div className="">
             <Image src={img} className="lg:hidden h-20 w-auto" />
             <h2 className="mt-6 text-3xl font-semibold text-pink-700">
@@ -32,6 +32,11 @@ export default function Login2() {
               </div>
               <div className="mb-4">
                 <button className="inline-block w-full py-4 px-8 leading-none text-white bg-pink-900 font-semibold rounded shadow">Entrar</button>
+              </div>
+              <div className="mb-4">
+                <p className="">
+                  <a href="" className="font-medium text-pink-700">Esqueceu a senha?</a>
+                </p>
               </div>
             </form>
           </div>
