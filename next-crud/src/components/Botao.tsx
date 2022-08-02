@@ -1,3 +1,4 @@
+
 interface BotaoProps{
     cor?: "green" | "blue" | "gray";
     className?: string
@@ -5,7 +6,7 @@ interface BotaoProps{
 }
 
 export default function Botao(props: BotaoProps) {
-    const cor = props.cor ?? 'gray'
+    const cor = props.cor ?? "gray"
 
     return (
         <div className="flex justify-end">
