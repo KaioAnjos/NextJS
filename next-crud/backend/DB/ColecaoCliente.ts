@@ -40,6 +40,8 @@ export default class ColecaoCliente implements ClienteRepostorio {
   }
 
   private colecao() {
+
     return firebase.firestore.collection("clientes").withConverter(this.conversor);
+
   }
 }

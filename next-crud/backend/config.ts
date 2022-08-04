@@ -1,7 +1,7 @@
-import * as firebase from "../node_modules/firebase";
+import firebase from "firebase";
 import "firebase/app";
 import "firebase/firestore";
-
+import "firebase/app";
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
