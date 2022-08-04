@@ -11,8 +11,8 @@ export default class ColecaoCliente implements ClienteRepostorio {
       };
     },
     fromFirestore(
-      snapshot: firebase.QueryDocumentSnapshot,
-      options: firebase.SnapshotOptions
+      snapshot: firebase.firestore.QueryDocumentSnapshot,
+      options: firebase.firestore.SnapshotOptions
     ) {
       const dados = snapshot.data(options);
       return new Cliente(dados.nome, dados.idade, snapshot.id);
@@ -40,6 +40,6 @@ export default class ColecaoCliente implements ClienteRepostorio {
   }
 
   private colecao() {
-    return firebase.collection("clientes").withConverter(this.conversor);
+    return firebase.firestore.collection("clientes").withConverter(this.conversor);
   }
 }
